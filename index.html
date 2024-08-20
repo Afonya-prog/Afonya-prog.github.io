@@ -1,3 +1,34 @@
+body{
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 18px;
+}
+
+.hint{
+	color: var(--tg-theme-hint-color);
+}
+
+.link{
+	color: var(--tg-theme-link-color);
+}
+
+.button{
+	background: var(--tg-theme-button-color);
+	color: var(--tg-theme-button-text-color);
+	border: none;
+	font-size: 18px;
+}
+
+.button:not(:last-child){
+	margin-bottom: 20px
+}
+
+#usercard{
+	text-align: center;
+}
 <body>
    <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
    </div>
@@ -7,7 +38,6 @@
    <p class="hint">Some little hint</p> <!--Просто текст-подсказка для проверки-->
    <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
    <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
-</body>
 let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
 tg.expand(); //расширяем на все окно  
@@ -43,3 +73,5 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
 	tg.sendData("some string that we need to send"); 
 	//при клике на основную кнопку отправляем данные в строковом виде
 });
+</body>
+
